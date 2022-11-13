@@ -9,12 +9,17 @@ import UIKit
 
 class ResultViewController: UIViewController {
 
+    // MARK: -  IBOutlets
+    
     @IBOutlet var resultLabel: UILabel!
     @IBOutlet var definitionLabel: UILabel!
+    
+    // MARK: - Public Properties
     
     var answersChosen: [Answer] = []
     var answersFiltered: Animal!
 
+    // MARK: - Override Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,11 +27,14 @@ class ResultViewController: UIViewController {
     
         getResult()
     }
-
+// MARK: - IBActions
+    
     @IBAction func doneButtonPressed(_ sender: UIBarButtonItem) {
         navigationController?.dismiss(animated: true)
     }
 }
+
+//MARK: - Private Methods
 
 extension ResultViewController {
     private func getResult() {
